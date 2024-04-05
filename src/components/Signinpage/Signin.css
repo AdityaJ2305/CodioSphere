@@ -1,0 +1,70 @@
+.fullscreenWrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    background-color: burlywood;
+    background-color: #00bfbf;
+    background-color: rgb(15, 15, 15);
+    background: rgb(120,21,245);
+    background: linear-gradient(110deg, rgba(120,21,245,1) 0%, rgba(199,16,228,1) 58%);
+}
+
+.signinWrapper{
+    height: 40vh;
+    width: 25vw;
+    background-color: rgba(198, 237, 4, 0.7);
+    background-color: #00bfbf;
+    background-color: rgb(200,83,230);
+    /* background: rgb(120,21,245);
+    background: linear-gradient(110deg, rgba(120,21,245,1) 0%, rgba(199,16,228,1) 58%); */
+    background-color: rgb(61,63,65);
+    /* margin: 100px 0px 0px 450px; */
+    padding: 100px 50px 100px 100px ;
+    border-radius: 50px;
+    color:white
+    /* box-shadow: 10px 10px 100px 20px rgb(200,83,230); */
+}
+
+.btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: black;
+    color:rgba(235, 189, 22, 0.842);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* transition: all 0.3 ease-in-out; */
+}
+
+.joinBtn{
+    margin-left: 100px;
+}
+
+footer{
+    position: fixed;
+    bottom:0;
+}
+
+.logoSign{
+    position: relative;
+    top: -60px;
+    left: -10px;
+    border-radius: 50px;
+}
+.createNewRoom{
+    margin-top:40px
+}
+.createNewRoom span{
+    color: rgb(120,21,245);
+    color: linear-gradient(110deg, rgba(120,21,245,1) 0%, rgba(199,16,228,1) 58%);
+    cursor: pointer;
+    font-size: large;
+}
+
+/* background: #00bfbf;
+  color: #fafafa;
+  text-shadow: none; */

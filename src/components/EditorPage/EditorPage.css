@@ -1,0 +1,50 @@
+.mainWrapper{
+    display: flex;
+}
+
+.aside{
+    height: 80vh;
+    width: 20vw;
+    background-color: #00bfbf;
+    background-color: rgb(61,63,65);
+    display: flex;
+    color: #FFD700;
+    color: rgb(200,83,230);
+    flex-direction: column;
+    gap: 50px
+}
+.asideBtns{
+    display: flex;
+    justify-content: space-around;
+}
+.logoImage{
+    width: 15vw;
+}
+
+.leaveBtn{
+    background-color: rgb(205,60,50);
+    color:#fff;
+
+}
+.leaveBtn:hover{
+   background-color: rgba(205, 60, 50, 0.9);
+   scale: 1.1;
+}
+.copyBtn:hover{
+    background-color: rgb(105,205,250);
+    scale: 1.1;
+ }
+.copyBtn{
+    color:black;
+    background-color:#A1D6E2;
+}
+
+.editorWrap{
+    width: 60vw;
+    border: 1px solid white;
+    background-color: rgb(61,63,65);
+}
+.roomMember{
+    color:white;
+    margin-left: 60px
+}

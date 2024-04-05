@@ -1,0 +1,22 @@
+.clientList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.client{
+    display: flex;
+    flex-direction: column;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.CodeMirror{
+    min-height: 75vh;
+    min-width: 65vw;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+    
+    
