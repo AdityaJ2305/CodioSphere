@@ -37,7 +37,7 @@ To get started with CodioSphere, follow these simple steps:
 
 1. Clone the project repository:
    ```bash
-   git clone 
+   git clone https://github.com/AdityaJ2305/CodioSphere.git
    ```
 
 2. Navigate into the project directory:
