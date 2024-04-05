@@ -78,7 +78,7 @@ function Signin() {
       <p className="createNewRoom">If you don't have an invite then create <span onClick={createNewRoom}>New Room</span></p>
     </div>
     <footer>
-      <h4> Built by Aditya Jindal  </h4>
+      <h4> Built by Aditya Jindal <a href="https://github.com/AdityaJ2305/CodioSphere.git" target="_blank">Github</a></h4>
     </footer>
     </div>
   );
