@@ -1,10 +1,25 @@
-.fullscreenWrapper {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #7815F5 0%, #C710E4 100%);
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
+.fullscreenWrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7815F5, #C710E4, #7815F5, #C710E4);
+  background-size: 300% 300%;
+  animation: gradientShift 5s ease infinite;
+}
+
 
 .signinWrapper {
     width: 35vw;
