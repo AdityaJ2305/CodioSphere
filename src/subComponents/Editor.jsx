@@ -1,27 +1,3 @@
-// import React, { useEffect } from 'react'
-// import CodeMirror from '@uiw/react-codemirror';
-// import { javascript } from '@codemirror/lang-javascript';
-
-// function Editor() {
-//     // useEffect(()=>{
-//     //     async function init(){
-//     //         CodeMirror.fromTextArea(document.getElementById('realTimeEditor'),{
-//     //             mode:{name:'javascript',json: true}
-//     //         })
-//     //     }
-//     //     init()
-//     // },[])
-//     const [value, setValue] = React.useState("console.log('hello world!');");
-//     const onChange = React.useCallback((val, viewUpdate) => {
-//       // console.log('val:', val);
-//       setValue(val);
-//     }, []);
-//     return <CodeMirror value={value} height="200px" onChange={onChange} />;
-// }
-
-// export default Editor;
-
-
 import React, {useEffect, useState } from 'react';
 import CodeMirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';

@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState,useRef, useEffect } from "react";
 import "../EditorPage/EditorPage.css";
 import Client from "../../subComponents/Client";
 import Editor from "../../subComponents/Editor";
 import imgCodio from "../../Images/CodioSpher-logo.png"
+import { initSocket } from "../../socket";
 
 function EditorPage() {
+  const socketRef = useRef(null);
+
+  // useEffect(()=>{
+  //   const init = async ()=>{
+  //     socketRef.current = await initSocket();
+  //     socketRef.current.emit(ACTIONS.JOIN,{
+  //       roomId,
+  //       username
+  //     })
+  //   }
+  //   init()
+  // },[])
   const [clients, setClients] = useState([
     { sockecId: 1, username: "Rakesh Kumar" },
     { sockecId: 2, username: "Mukesh kumar" },
