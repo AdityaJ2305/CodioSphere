@@ -1,11 +1,6 @@
-<!-- package; npm add uuid;
-mui
-toast
-react avatar 
-
-navigate ki state ki jgah localstorage  -->
-
 # CodioSphere
+
+**Live Demo:** Check out the live demo of CodioSphere [here](https://codiosphere.vercel.app/).
 
 CodioSphere is a real-time collaborative code editor designed to facilitate seamless teamwork among developers. With CodioSphere, you can code together in real-time, making collaboration on projects efficient and hassle-free.
 
@@ -65,14 +60,3 @@ Once installed, you can run CodioSphere locally:
 
 4. Start collaborating with your team members in real-time!
 
-## Contributing
-
-We welcome contributions from the community to improve CodioSphere. If you'd like to contribute, please fork the repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss your ideas.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize the README further to include any additional information or instructions specific to your project. If you have any questions or need further assistance, don't hesitate to ask!
