@@ -71,7 +71,7 @@ function Signin() {
         <button className="btn joinBtn" onClick={joinRoom}>
           Join
         </button>
-        <p className="createNewRoom">
+        <p className="createNewRoom">Create a 
           <span onClick={createNewRoom}>New Room</span>
         </p>
       </div>
