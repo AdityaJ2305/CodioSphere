@@ -1,13 +1,17 @@
-import React, { useState,useRef, useEffect } from "react";
+import React, { useState,useRef, useEffect} from "react";
 import "../EditorPage/EditorPage.css";
 import Client from "../../subComponents/Client";
 import Editor from "../../subComponents/Editor";
 import imgCodio from "../../Images/CodioSpher-logo.png"
 import { initSocket } from "../../socket";
+import { useParams,useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function EditorPage() {
   const socketRef = useRef(null);
-
+  const roomId = useParams();
+  const navigate = useNavigate();
+  console.log(roomId.id)
   // useEffect(()=>{
   //   const init = async ()=>{
   //     socketRef.current = await initSocket();
@@ -18,6 +22,15 @@ function EditorPage() {
   //   }
   //   init()
   // },[])
+  async function handleCopyClick(){
+   await navigator.clipboard.writeText(roomId.id);
+    toast.success("Room ID Copied");
+  }
+
+  function handleLeaveClick(){
+    navigate('/')
+  }
+
   const [clients, setClients] = useState([
     { sockecId: 1, username: "Rakesh Kumar" },
     { sockecId: 2, username: "Mukesh kumar" },
@@ -42,8 +55,8 @@ function EditorPage() {
         </div>
         </div>
         <div className="asideBtns">
-        <button className="btn copyBtn"> Copy Room ID </button>
-        <button className="btn leaveBtn"> Leave Room</button>
+        <button className="copyBtn" onClick={handleCopyClick}> Copy Room ID </button>
+        <button className="leaveBtn" onClick={handleLeaveClick}> Leave Room</button>
         </div>
       </div>
       {/* <div className="editorWrap"> */}
