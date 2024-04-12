@@ -68,11 +68,13 @@
 
 .copyBtn {
     background-color: #9C27B0 ;
+    background-color: rgb(103,214,105,0.9);
     color: black;
 }
 
 .copyBtn:hover {
     background-color: #673AB7 ; 
+    background-color: rgb(103,214,105);
     transform: scale(1.1);
 }
 
