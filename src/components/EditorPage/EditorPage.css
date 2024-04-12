@@ -1,3 +1,14 @@
+@keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 .mainWrapper{
     display: flex;
 }
@@ -5,46 +16,63 @@
 .aside{
     height: 100vh;
     width: 20%;
-    background-color: #00bfbf;
-    background-color: rgb(61,63,65);
     display: flex;
-    color: #FFD700;
-    color: rgb(200,83,230);
     flex-direction: column;
-    gap: 50px;
+    /* gap: 50px; */
+    color: white;
+    background: linear-gradient(135deg, #7815F5, #C710E4, #7815F5, #C710E4);
+    background-size: 300% 300%;
+    animation: gradientShift 5s ease infinite;
+}
+.roomMember{
+    font-size: 1.5rem;
+    margin-left: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
 }
 .asideBtns{
     display: flex;
-    justify-content: space-around;
+    position: absolute;
+    bottom: 12px;
+    margin-left: -1px;
 }
 .logoImage{
-    width: 15vw;
+    width: 20vw;
+    margin-left: 0px;
 }
 
-.leaveBtn{
-    background-color: rgb(205,60,50);
-    color:#fff;
-
-}
-.leaveBtn:hover{
-   background-color: rgba(205, 60, 50, 0.9);
-   scale: 1.1;
-}
-.copyBtn:hover{
-    background-color: rgb(105,205,250);
-    scale: 1.1;
- }
-.copyBtn{
-    color:black;
-    background-color:#A1D6E2;
+/* Button Styles */
+.leaveBtn,
+.copyBtn {
+    padding: 10px 20px;
+    margin: 4px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.editorWrap{
-    width: 60vw;
-    border: 1px solid white;
-    background-color: rgb(61,63,65);
+
+.leaveBtn {
+    background-color: rgb(169,54,47);
+    color: #fff;
 }
-.roomMember{
-    color:white;
-    margin-left: 60px
+
+.leaveBtn:hover {
+    background-color: #FF80AB ;
+    background-color: #E91E63;
+    transform: scale(1.1); 
 }
+
+
+.copyBtn {
+    background-color: #9C27B0 ;
+    color: black;
+}
+
+.copyBtn:hover {
+    background-color: #673AB7 ; 
+    transform: scale(1.1);
+}
+

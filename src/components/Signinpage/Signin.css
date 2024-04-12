@@ -34,7 +34,7 @@
     flex-direction: column;
 }
 
-.btn {
+.joinBtn{
     padding: 10px 5px;
     border-radius: 25px;
     background-color: #7815F5;
@@ -46,7 +46,7 @@
     margin-left: 7%;
 }
 
-.btn:hover {
+.joinBtn:hover {
     background-color: #C710E4;
 }
 
