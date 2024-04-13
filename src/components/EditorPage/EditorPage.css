@@ -11,6 +11,7 @@
   }
 .mainWrapper{
     display: flex;
+    height: 100vh;
 }
 
 .aside{

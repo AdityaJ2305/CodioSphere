@@ -9,7 +9,7 @@ CodioSphere is a real-time collaborative code editor designed to facilitate seam
 - **Real-time Collaboration**: Work together with your team members in real-time, seeing changes instantly as they are made.
 - **Language Support**: CodioSphere supports various programming languages, including JavaScript, making it versatile for different projects.
 - **User-friendly Interface**: An intuitive and easy-to-use interface makes collaboration effortless.
-- **Customizable Code Editor**: Powered by CodeMirror, the code editor in CodioSphere is highly customizable and provides a smooth coding experience.
+- **Customizable Code Editor**: Powered by Monaco Code Editor , the code editor in CodioSphere is highly customizable and provides a smooth coding experience.
 - **Room Management**: Create new rooms for collaboration sessions, each with a unique room ID generated using the UID library.
 - **User Authentication**: Sign in with a username and room ID for secure collaboration sessions.
 

@@ -6,6 +6,7 @@ import imgCodio from "../../Images/CodioSpher-logo.png"
 import { initSocket } from "../../socket";
 import { useParams,useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import EditorMonaco from "../../subComponents/EditorMonaco";
 
 function EditorPage() {
   const socketRef = useRef(null);
@@ -60,7 +61,7 @@ function EditorPage() {
         </div>
       </div>
       {/* <div className="editorWrap"> */}
-        <Editor />
+        <EditorMonaco/>
       {/* </div> */}
     </div>
   );
