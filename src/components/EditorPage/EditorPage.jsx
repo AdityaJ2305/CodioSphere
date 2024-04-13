@@ -8,6 +8,8 @@ import { useParams,useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import EditorMonaco from "../../subComponents/EditorMonaco";
 
+
+
 function EditorPage() {
   const socketRef = useRef(null);
   const roomId = useParams();
@@ -60,9 +62,9 @@ function EditorPage() {
         <button className="leaveBtn" onClick={handleLeaveClick}> Leave Room</button>
         </div>
       </div>
-      {/* <div className="editorWrap"> */}
+      <div >
         <EditorMonaco/>
-      {/* </div> */}
+      </div>
     </div>
   );
 }
