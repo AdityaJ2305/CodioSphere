@@ -62,7 +62,7 @@ function EditorPage() {
         <button className="leaveBtn" onClick={handleLeaveClick}> Leave Room</button>
         </div>
       </div>
-      <div >
+      <div className="editorWrapper">
         <EditorMonaco/>
       </div>
     </div>

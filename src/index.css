@@ -6,7 +6,6 @@ body{
 /* Improved styling for your language selector */
 /* Improved styling for your language selector */
 .langSelector {
-    position: absolute;
     width: 100%;
     max-width: 200px;
     border-radius: 5px;
@@ -41,7 +40,13 @@ body{
 select:focus {
     outline: none;
 }
-
+.selectWrapper{
+    background-color: black;
+}
+.editorWrapper{
+    display: flex;
+    flex-direction: column;
+}
 
 /* .editorWrap{
     border: 8px solid rebeccapurple; 
