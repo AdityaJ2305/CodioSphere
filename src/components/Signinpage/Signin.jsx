@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import { v4 as uuidV4 } from "uuid";
 import toast from "react-hot-toast";
 import imgLogo from "../../Images/CodioSpher-logo.png";
+import Github01Icon from "../../assets/Github01Icon";
 // import Button from "@mui/material/Button";
 
 function Signin() {
@@ -83,7 +84,7 @@ function Signin() {
             href="https://github.com/AdityaJ2305/CodioSphere.git"
             target="_blank"
           >
-            Github
+            <Github01Icon/>
           </a>
         </h4>
       </footer>

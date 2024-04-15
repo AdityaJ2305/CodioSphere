@@ -14,7 +14,7 @@ function EditorPage() {
   const socketRef = useRef(null);
   const roomId = useParams();
   const navigate = useNavigate();
-  console.log(roomId.id)
+  // console.log(roomId.id)
   // useEffect(()=>{
   //   const init = async ()=>{
   //     socketRef.current = await initSocket();
