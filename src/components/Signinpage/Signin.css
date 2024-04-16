@@ -22,8 +22,8 @@
   
   .signinWrapper {
     width: 90vw; /* Adjusted width for smaller screens */
-    max-width: 400px; /* Limit width for larger screens */
-    height: 65vh;
+    max-width: 490px; /* Limit width for larger screens */
+    height: 70vh;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 25px;
@@ -78,7 +78,7 @@
   }
   
   .createNewRoom {
-    margin-left: 5vw; 
+    margin-left: 10vw; 
     font-size: 1.5rem;
     color: white;
   }
@@ -115,7 +115,7 @@
   }
   
   .logoSign {
-    margin-left: 10%;
+    margin-left: 5%;
   }
   
   /* Media Query for screens smaller than 600px */
