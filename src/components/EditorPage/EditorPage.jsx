@@ -37,7 +37,7 @@ function EditorPage() {
   const [clients, setClients] = useState([
     { sockecId: 1, username: "Rakesh Kumar" },
     { sockecId: 2, username: "Mukesh kumar" },
-    { sockecId: 3, username: "Dinesh Gumar" }
+    { sockecId: 3, username: "Dinesh Kumar" }
   ]);
   return (
     <div className="mainWrapper">
