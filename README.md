@@ -20,6 +20,7 @@ CodioSphere is a real-time collaborative code editor designed to facilitate seam
   - Material-UI
   - React Toast
   - React Avatar
+  - Code Monaco
 - Backend:
   - Node.js
   - Express.js
