@@ -1,7 +1,6 @@
 import React, { useState,useRef, useEffect} from "react";
 import "../EditorPage/EditorPage.css";
 import Client from "../../subComponents/Client";
-import Editor from "../../subComponents/Editor";
 import imgCodio from "../../Images/CodioSpher-logo.png"
 import { initSocket } from "../../socket";
 import { useParams,useNavigate } from "react-router-dom";
