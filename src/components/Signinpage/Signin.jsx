@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useState , useRef, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "../Signinpage/Signin.css";
 import { v4 as uuidV4 } from "uuid";
 import toast from "react-hot-toast";
 import imgLogo from "../../Images/CodioSpher-logo.png";
 import Github01Icon from "../../assets/Github01Icon";
-// import Button from "@mui/material/Button";
 
 function Signin() {
   const [roomId, setRoomId] = useState("");
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
-
+  const inputRef = useRef(null);
+  useEffect(()=>{
+    const handleFocus=(event)=>{
+      if(event.key==="/"){
+        inputRef.current.focus();
+      }
+    };
+    document.addEventListener('keyup', handleFocus);
+  },[]);
   const joinRoom = () => {
     if (!roomId || !username) {
       toast.error("Room ID & Username is Required");
@@ -42,11 +49,9 @@ function Signin() {
   return (
     <div className="fullscreenWrapper">
       <div className="signinWrapper">
-        
         <div className="logoSign">
           <img src={imgLogo} alt="CodioSphere Logo" />
         </div>
-
         <form spellCheck="off">
           <div className="roomId labePlusInput">
             <label>Room Id</label>
@@ -56,6 +61,7 @@ function Signin() {
               value={roomId}
               onChange={(e) => setRoomId(e.target.value)}
               onKeyUp={handleInputEnter}
+              ref={inputRef}
             ></input>
           </div>
           <div className="username labePlusInput">
@@ -81,7 +87,7 @@ function Signin() {
           Built by Aditya Jindal{" "}
           <a
             href="https://github.com/AdityaJ2305/CodioSphere.git"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <Github01Icon/>
           </a>
