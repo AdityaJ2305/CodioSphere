@@ -1,7 +1,7 @@
 import React, { useState , useRef, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "../Signinpage/Signin.css";
-import { v4 as uuidV4 } from "uuid";
+import { customAlphabet } from 'nanoid';
 import toast from "react-hot-toast";
 import imgLogo from "../../Images/CodioSpher-logo.png";
 import Github01Icon from "../../assets/Github01Icon";
@@ -26,12 +26,7 @@ function Signin() {
     }
     localStorage.setItem("RoomID", roomId);
     localStorage.setItem("username", username);
-    navigate(`/editor/${roomId}`, {
-      state: {
-        username,
-        roomId,
-      },
-    });
+    navigate(`/editor/${roomId}`);
   };
   const handleInputEnter = (e) => {
     e.preventDefault();
@@ -41,8 +36,9 @@ function Signin() {
   };
   const createNewRoom = (event) => {
     event.preventDefault();
-    const id = uuidV4();
-    // console.log(id);
+    const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
+    const nanoid = customAlphabet(alphabet, 8);
+    const id = nanoid(); 
     setRoomId(id);
     toast.success("Created New Room");
   };
@@ -62,6 +58,7 @@ function Signin() {
               onChange={(e) => setRoomId(e.target.value)}
               onKeyUp={handleInputEnter}
               ref={inputRef}
+              spellcheck="false"
             ></input>
           </div>
           <div className="username labePlusInput">
