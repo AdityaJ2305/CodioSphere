@@ -3,13 +3,11 @@ import { Editor } from '@monaco-editor/react';
 import { codeSnippets } from '../assets/code_snippets';
 
 function EditorMonaco() {
-  const [optionChoosen, setOptionChoosen] = useState('javascript');
   const [language, setLanguage] = useState('javascript');
-  const [code, setCode] = useState(codeSnippets.javascript);
+  const [code, setCode] = useState(codeSnippets[language]);
 
   function handleOptionChange(e) {
     const selectedLanguage = e.target.value;
-    setOptionChoosen(selectedLanguage);
     setLanguage(selectedLanguage);
     setCode(codeSnippets[selectedLanguage]);
   }
@@ -27,11 +25,12 @@ function EditorMonaco() {
         </select>
       </div>
       <Editor
-        height="92vh"
-        width="80vw"
+        height="100%"
+        width="100%"
         theme="hc-black"
         language={language}
         value={code}
+        onChange={(newValue)=> setCode(newValue)}
         className="editorWrap"
         options={{
           fontSize: 20,

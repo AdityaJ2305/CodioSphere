@@ -13,7 +13,10 @@
     display: flex;
     height: 100vh;
 }
-
+.editorWrapper{
+    height: 100vh;
+    width: 80%;
+}
 .aside{
     height: 100vh;
     width: 20%;
