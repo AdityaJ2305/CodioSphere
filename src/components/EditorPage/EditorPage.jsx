@@ -3,7 +3,7 @@ import "../EditorPage/EditorPage.css";
 import Client from "../../subComponents/Client";
 import imgCodio from "../../Images/CodioSpher-logo.png"
 import { initSocket } from "../../socket";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams,useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import EditorMonaco from "../../subComponents/EditorMonaco";
 
@@ -11,8 +11,17 @@ import EditorMonaco from "../../subComponents/EditorMonaco";
 
 function EditorPage() {
   const socketRef = useRef(null);
+  const location = useLocation()
   const roomId = useParams();
   const navigate = useNavigate();
+  useEffect(()=>{
+    const username = location.state;
+    if(!username){
+      // TODO: page to show user to enter username first
+      navigate('/');
+      return;
+    }
+  });
   // console.log(roomId.id)
   // useEffect(()=>{
   //   const init = async ()=>{

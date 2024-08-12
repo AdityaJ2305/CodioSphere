@@ -24,9 +24,7 @@ function Signin() {
       toast.error("Room ID & Username is Required");
       return;
     }
-    localStorage.setItem("RoomID", roomId);
-    localStorage.setItem("username", username);
-    navigate(`/editor/${roomId}`);
+    navigate(`/editor/${roomId}`, {state: username});
   };
   const handleInputEnter = (e) => {
     e.preventDefault();
