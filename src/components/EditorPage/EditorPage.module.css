@@ -9,7 +9,14 @@
     background-position: 0% 50%;
   }
 }
-
+@keyframes rotate {
+  from{
+      transform:rotate(0deg)
+  }
+  to{
+      transform: rotate(360deg);
+  }
+}
 .mainWrapper {
   height: 100vh;
   width: 100vw;
@@ -18,43 +25,34 @@
   height: 100%;
   width: 100%;
 }
-.aside {
-  z-index: 9999;
+
+.dropDown{
+  z-index: 100000;
   position: absolute;
-  height: auto;
-  width: 30%;
-  margin: 50px;
   right: 0;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  background: linear-gradient(135deg, #7815f5, #c710e4, #7815f5, #c710e4);
-  background-size: 300% 300%;
-  animation: gradientShift 5s ease infinite;
-  border-radius: 15px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  margin: 2vh 60vh 5vh 0vh;
+  font-size: 30px;
+  cursor: pointer;
+  animation: rotate 1s infinite;
 }
 
 .roomMember {
   display: flex;
   justify-content: center;
   color: rgb(82,179,208);
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   /* animation: bounce 1500ms infinite; */
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'Times New Roman', Times, serif;
+  font-family: "M PLUS 1 Code", monospace;
   /* text-transform: uppercase; */
-  padding: 5px;
-  border-radius: 5px;
 }
 
 .clientList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   margin: 0 0 40px 20px;
 }
 .asideBtns {
@@ -97,4 +95,53 @@
   background: linear-gradient(135deg, #9d50bb, #6e48aa);
   transform: scale(1.1);
   box-shadow: 0px 6px 20px rgba(0, 0, 255, 0.6);
+}
+
+
+@keyframes showAside {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hideAside {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.aside {
+  z-index: 999;
+  position: absolute;
+  height: auto;
+  width: 30%;
+  margin: 80px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: linear-gradient(135deg, #7815f5, #c710e4, #7815f5, #c710e4);
+  background-size: 300% 300%;
+  animation: gradientShift 5s ease infinite;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Initially hide the aside */
+.asideHidden {
+  animation: hideAside 500ms forwards;
+  visibility: hidden;
+}
+
+/* Show the aside */
+.asideVisible {
+  animation: showAside 500ms forwards;
+  visibility: visible;
 }

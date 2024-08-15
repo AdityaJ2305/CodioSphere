@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../EditorPage/EditorPage.module.css"; 
 import Client from "../../subComponents/Client";
-// import imgCodio from "../../Images/CodioSpher-logo.png";
-// import { initSocket } from "../../socket";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import EditorMonaco from "../../subComponents/EditorMonaco";
-
+import { faStream } from "@fortawesome/free-solid-svg-icons";
 function EditorPage() {
-  // const socketRef = useRef(null);
+  const [isAsideVisible, setIsAsideVisible] = useState(false); // State to toggle the aside
   const location = useLocation();
   const roomId = useParams();
   const navigate = useNavigate();
@@ -16,11 +15,10 @@ function EditorPage() {
   useEffect(() => {
     const username = location.state;
     if (!username) {
-      // TODO: page to show user to enter username first
       navigate('/');
       return;
     }
-  },[location,navigate]);
+  }, [location, navigate]);
 
   async function handleCopyClick() {
     await navigator.clipboard.writeText(roomId.id);
@@ -31,42 +29,42 @@ function EditorPage() {
     navigate('/');
   }
 
-  const clients=[
-    { sockecId: 1, username: "Rakesh Kumar" },
-    { sockecId: 2, username: "Mukesh kumar" },
-    { sockecId: 3, username: "Dinesh Kumar" },
-    { sockecId: 1, username: "Rakesh Kumar" },
-    { sockecId: 2, username: "Mukesh kumar" },
-    { sockecId: 3, username: "Dinesh Kumar" },
-    { sockecId: 1, username: "Rakesh Kumar" },
-    { sockecId: 2, username: "Mukesh kumar" },
-    { sockecId: 3, username: "Dinesh Kumar" },
-    { sockecId: 1, username: "Rakesh Kumar" },
-    { sockecId: 2, username: "Mukesh kumar" },
-    { sockecId: 3, username: "Dinesh Kumar" }
+  function toggleAside() {
+    setIsAsideVisible(!isAsideVisible); // Toggle the aside visibility
+  }
+
+  const clients = [
+    { socketId: 1, username: "Rakesh Kumar" },
+    { socketId: 2, username: "Mukesh Kumar" },
+    { socketId: 3, username: "Dinesh Kumar" },
+    { socketId: 1, username: "Rakesh Kumar" },
+    { socketId: 2, username: "Mukesh Kumar" },
+    { socketId: 3, username: "Dinesh Kumar" },
+    { socketId: 1, username: "Rakesh Kumar" },
+    { socketId: 2, username: "Mukesh Kumar" },
+    { socketId: 3, username: "Dinesh Kumar" },
   ];
 
   return (
     <>
-      <div className={styles.aside}>
+      <FontAwesomeIcon 
+        icon={faStream} 
+        style={{color:"white"}}
+        className={styles.dropDown} 
+        onClick={toggleAside} // Handle click event
+      />
+      <div className={`${styles.aside} ${isAsideVisible ? styles.asideVisible : styles.asideHidden}`}>
         <div className={styles.asideInner}>
-          {/* <div className={styles.logo}>
-            <img
-              src={imgCodio}
-              alt="logoImage"
-              className={styles.logoImage}
-            ></img>
-          </div> */}
-          <h4 className={styles.roomMember}>Room Members</h4>
+          <h1 className={styles.roomMember}>Room Members</h1>
           <div className={styles.clientList}>
             {clients.map((client) => (
-              <Client username={client.username} key={client.sockecId} />
+              <Client username={client.username} key={client.socketId} />
             ))}
           </div>
         </div>
         <div className={styles.asideBtns}>
-          <button className={styles.copyBtn} onClick={handleCopyClick}> Copy Room ID </button>
-          <button className={styles.leaveBtn} onClick={handleLeaveClick}> Leave Room</button>
+          <button className={styles.copyBtn} onClick={handleCopyClick}>Copy Room ID</button>
+          <button className={styles.leaveBtn} onClick={handleLeaveClick}>Leave Room</button>
         </div>
       </div>
       <div className={styles.mainWrapper}>
