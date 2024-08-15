@@ -45,19 +45,28 @@ function EditorPage() {
   const [clients, setClients] = useState([
     { sockecId: 1, username: "Rakesh Kumar" },
     { sockecId: 2, username: "Mukesh kumar" },
+    { sockecId: 3, username: "Dinesh Kumar" },
+    { sockecId: 1, username: "Rakesh Kumar" },
+    { sockecId: 2, username: "Mukesh kumar" },
+    { sockecId: 3, username: "Dinesh Kumar" },
+    { sockecId: 1, username: "Rakesh Kumar" },
+    { sockecId: 2, username: "Mukesh kumar" },
+    { sockecId: 3, username: "Dinesh Kumar" },
+    { sockecId: 1, username: "Rakesh Kumar" },
+    { sockecId: 2, username: "Mukesh kumar" },
     { sockecId: 3, username: "Dinesh Kumar" }
   ]);
   return (
-    <div className="mainWrapper">
-      <div className="aside">
+    <>
+    <div className="aside">
         <div className="asideInner">
-          <div className="logo">
+          {/* <div className="logo">
             <img
               src={imgCodio}
               alt="logoImage"
               className="logoImage"
             ></img>
-          </div>
+          </div> */}
           <h4 className="roomMember">Room Members</h4>
         <div className="clientList">
           {clients.map((client) => (
@@ -70,10 +79,13 @@ function EditorPage() {
         <button className="leaveBtn" onClick={handleLeaveClick}> Leave Room</button>
         </div>
       </div>
+    <div className="mainWrapper">
       <div className="editorWrapper">
         <EditorMonaco/>
       </div>
     </div>
+    </>
+    
   );
 }
 
