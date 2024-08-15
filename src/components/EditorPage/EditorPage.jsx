@@ -30,7 +30,7 @@ function EditorPage() {
   }
 
   function toggleAside() {
-    setIsAsideVisible(!isAsideVisible); // Toggle the aside visibility
+    setIsAsideVisible(!isAsideVisible);
   }
 
   const clients = [

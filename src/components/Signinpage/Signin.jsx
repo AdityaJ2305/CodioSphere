@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../Signinpage/Signin.module.css";  // Updated to CSS module
-import { customAlphabet } from 'nanoid';
+import styles from "../Signinpage/Signin.module.css";
+import { customAlphabet } from "nanoid";
 import toast from "react-hot-toast";
 import imgLogo from "../../Images/CodioSpher-logo.png";
 import Github01Icon from "../../assets/Github01Icon";
@@ -18,7 +18,7 @@ function Signin() {
         inputRef.current.focus();
       }
     };
-    document.addEventListener('keyup', handleFocus);
+    document.addEventListener("keyup", handleFocus);
   }, []);
 
   const joinRoom = () => {
@@ -38,9 +38,10 @@ function Signin() {
 
   const createNewRoom = (event) => {
     event.preventDefault();
-    const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
+    const alphabet =
+      "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     const nanoid = customAlphabet(alphabet, 8);
-    const id = nanoid(); 
+    const id = nanoid();
     setRoomId(id);
     toast.success("Created New Room");
   };
@@ -74,11 +75,14 @@ function Signin() {
             ></input>
           </div>
         </form>
-        <button className={styles.btn + " " + styles.joinBtn} onClick={joinRoom}>
+        <button
+          className={styles.btn + " " + styles.joinBtn}
+          onClick={joinRoom}
+        >
           Join
         </button>
-        <p className={styles.createNewRoom}>Create a 
-          <span onClick={createNewRoom}>New Room</span>
+        <p className={styles.createNewRoom}>
+          Create a<span onClick={createNewRoom}>New Room</span>
         </p>
       </div>
       <footer>
@@ -87,7 +91,8 @@ function Signin() {
           Built by Aditya Jindal{" "}
           <a
             href="https://github.com/AdityaJ2305/CodioSphere.git"
-            target="_blank" rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
           >
             <Github01Icon />
           </a>
