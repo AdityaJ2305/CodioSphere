@@ -1,48 +1,37 @@
-import React, { useState,useRef, useEffect} from "react";
-import "../EditorPage/EditorPage.css";
+import React, { useEffect } from "react";
+import styles from "../EditorPage/EditorPage.module.css"; 
 import Client from "../../subComponents/Client";
-import imgCodio from "../../Images/CodioSpher-logo.png"
-import { initSocket } from "../../socket";
-import { useParams,useNavigate, useLocation } from "react-router-dom";
+// import imgCodio from "../../Images/CodioSpher-logo.png";
+// import { initSocket } from "../../socket";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import EditorMonaco from "../../subComponents/EditorMonaco";
 
-
-
 function EditorPage() {
-  const socketRef = useRef(null);
-  const location = useLocation()
+  // const socketRef = useRef(null);
+  const location = useLocation();
   const roomId = useParams();
   const navigate = useNavigate();
-  useEffect(()=>{
+
+  useEffect(() => {
     const username = location.state;
-    if(!username){
+    if (!username) {
       // TODO: page to show user to enter username first
       navigate('/');
       return;
     }
-  });
-  // console.log(roomId.id)
-  // useEffect(()=>{
-  //   const init = async ()=>{
-  //     socketRef.current = await initSocket();
-  //     socketRef.current.emit(ACTIONS.JOIN,{
-  //       roomId,
-  //       username
-  //     })
-  //   }
-  //   init()
-  // },[])
-  async function handleCopyClick(){
-   await navigator.clipboard.writeText(roomId.id);
+  },[location,navigate]);
+
+  async function handleCopyClick() {
+    await navigator.clipboard.writeText(roomId.id);
     toast.success("Room ID Copied");
   }
 
-  function handleLeaveClick(){
-    navigate('/')
+  function handleLeaveClick() {
+    navigate('/');
   }
 
-  const [clients, setClients] = useState([
+  const clients=[
     { sockecId: 1, username: "Rakesh Kumar" },
     { sockecId: 2, username: "Mukesh kumar" },
     { sockecId: 3, username: "Dinesh Kumar" },
@@ -55,37 +44,37 @@ function EditorPage() {
     { sockecId: 1, username: "Rakesh Kumar" },
     { sockecId: 2, username: "Mukesh kumar" },
     { sockecId: 3, username: "Dinesh Kumar" }
-  ]);
+  ];
+
   return (
     <>
-    <div className="aside">
-        <div className="asideInner">
-          {/* <div className="logo">
+      <div className={styles.aside}>
+        <div className={styles.asideInner}>
+          {/* <div className={styles.logo}>
             <img
               src={imgCodio}
               alt="logoImage"
-              className="logoImage"
+              className={styles.logoImage}
             ></img>
           </div> */}
-          <h4 className="roomMember">Room Members</h4>
-        <div className="clientList">
-          {clients.map((client) => (
-            <Client username={client.username} key={client.sockecId} />
-          ))}
+          <h4 className={styles.roomMember}>Room Members</h4>
+          <div className={styles.clientList}>
+            {clients.map((client) => (
+              <Client username={client.username} key={client.sockecId} />
+            ))}
+          </div>
         </div>
-        </div>
-        <div className="asideBtns">
-        <button className="copyBtn" onClick={handleCopyClick}> Copy Room ID </button>
-        <button className="leaveBtn" onClick={handleLeaveClick}> Leave Room</button>
+        <div className={styles.asideBtns}>
+          <button className={styles.copyBtn} onClick={handleCopyClick}> Copy Room ID </button>
+          <button className={styles.leaveBtn} onClick={handleLeaveClick}> Leave Room</button>
         </div>
       </div>
-    <div className="mainWrapper">
-      <div className="editorWrapper">
-        <EditorMonaco/>
+      <div className={styles.mainWrapper}>
+        <div className={styles.editorWrapper}>
+          <EditorMonaco />
+        </div>
       </div>
-    </div>
     </>
-    
   );
 }
 

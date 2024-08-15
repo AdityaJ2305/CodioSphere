@@ -1,6 +1,6 @@
-import React, { useState , useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Signinpage/Signin.css";
+import styles from "../Signinpage/Signin.module.css";  // Updated to CSS module
 import { customAlphabet } from 'nanoid';
 import toast from "react-hot-toast";
 import imgLogo from "../../Images/CodioSpher-logo.png";
@@ -11,27 +11,31 @@ function Signin() {
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
   const inputRef = useRef(null);
-  useEffect(()=>{
-    const handleFocus=(event)=>{
-      if(event.key==="/"){
+
+  useEffect(() => {
+    const handleFocus = (event) => {
+      if (event.key === "/") {
         inputRef.current.focus();
       }
     };
     document.addEventListener('keyup', handleFocus);
-  },[]);
+  }, []);
+
   const joinRoom = () => {
     if (!roomId || !username) {
       toast.error("Room ID & Username is Required");
       return;
     }
-    navigate(`/editor/${roomId}`, {state: username});
+    navigate(`/editor/${roomId}`, { state: username });
   };
+
   const handleInputEnter = (e) => {
     e.preventDefault();
     if (e.code === "Enter") {
       joinRoom();
     }
   };
+
   const createNewRoom = (event) => {
     event.preventDefault();
     const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
@@ -40,14 +44,15 @@ function Signin() {
     setRoomId(id);
     toast.success("Created New Room");
   };
+
   return (
-    <div className="fullscreenWrapper">
-      <div className="signinWrapper">
-        <div className="logoSign">
+    <div className={styles.fullscreenWrapper}>
+      <div className={styles.signinWrapper}>
+        <div className={styles.logoSign}>
           <img src={imgLogo} alt="CodioSphere Logo" />
         </div>
         <form spellCheck="off">
-          <div className="roomId labePlusInput">
+          <div className={styles.roomId + " " + styles.labePlusInput}>
             <label>Room Id</label>
             <input
               type="text"
@@ -56,10 +61,10 @@ function Signin() {
               onChange={(e) => setRoomId(e.target.value)}
               onKeyUp={handleInputEnter}
               ref={inputRef}
-              spellcheck="false"
+              spellCheck="false"
             ></input>
           </div>
-          <div className="username labePlusInput">
+          <div className={styles.username + " " + styles.labePlusInput}>
             <label>Username</label>
             <input
               type="text"
@@ -69,10 +74,10 @@ function Signin() {
             ></input>
           </div>
         </form>
-        <button className="btn joinBtn" onClick={joinRoom}>
+        <button className={styles.btn + " " + styles.joinBtn} onClick={joinRoom}>
           Join
         </button>
-        <p className="createNewRoom">Create a 
+        <p className={styles.createNewRoom}>Create a 
           <span onClick={createNewRoom}>New Room</span>
         </p>
       </div>
@@ -84,7 +89,7 @@ function Signin() {
             href="https://github.com/AdityaJ2305/CodioSphere.git"
             target="_blank" rel="noreferrer"
           >
-            <Github01Icon/>
+            <Github01Icon />
           </a>
         </h4>
       </footer>
