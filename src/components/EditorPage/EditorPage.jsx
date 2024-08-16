@@ -37,12 +37,12 @@ function EditorPage() {
     { socketId: 1, username: "Rakesh Kumar" },
     { socketId: 2, username: "Mukesh Kumar" },
     { socketId: 3, username: "Dinesh Kumar" },
-    { socketId: 1, username: "Rakesh Kumar" },
-    { socketId: 2, username: "Mukesh Kumar" },
-    { socketId: 3, username: "Dinesh Kumar" },
-    { socketId: 1, username: "Rakesh Kumar" },
-    { socketId: 2, username: "Mukesh Kumar" },
-    { socketId: 3, username: "Dinesh Kumar" },
+    { socketId: 5, username: "Rakesh Kumar" },
+    { socketId: 6, username: "Mukesh Kumar" },
+    { socketId: 7, username: "Dinesh Kumar" },
+    { socketId: 8, username: "Rakesh Kumar" },
+    { socketId: 9, username: "Mukesh Kumar" },
+    { socketId: 0, username: "Dinesh Kumar" },
   ];
 
   return (
