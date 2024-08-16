@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "../Signinpage/Signin.module.css";
 import { customAlphabet } from "nanoid";
 import toast from "react-hot-toast";
-import imgLogo from "../../Images/CodioSpher-logo.png";
+import imgLogo from "../../assets/Images/CodioSpher-logo.png";
 import Github01Icon from "../../assets/Github01Icon";
 
 function Signin() {

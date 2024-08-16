@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "../EditorPage/EditorPage.module.css"; 
-import Client from "../../subComponents/Client";
+import Client from "../../util/Client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
-import EditorMonaco from "../../subComponents/EditorMonaco";
+import EditorMonaco from "../../util/EditorMonaco";
 import { faStream } from "@fortawesome/free-solid-svg-icons";
 function EditorPage() {
   const [isAsideVisible, setIsAsideVisible] = useState(false); // State to toggle the aside
@@ -50,8 +50,8 @@ function EditorPage() {
       <FontAwesomeIcon 
         icon={faStream} 
         style={{color:"white"}}
-        className={styles.dropDown} 
-        onClick={toggleAside} // Handle click event
+        className={`${styles.dropDown}`} 
+        onClick={toggleAside}
       />
       <div className={`${styles.aside} ${isAsideVisible ? styles.asideVisible : styles.asideHidden}`}>
         <div className={styles.asideInner}>
