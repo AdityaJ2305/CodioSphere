@@ -81,7 +81,7 @@ function Signin() {
         >
           Join
         </button>
-        <p className={styles.createNewRoom}>
+        <p className={styles.createNewRoom} style={{userSelect: 'none'}}>
           Create a<span onClick={createNewRoom}>New Room</span>
         </p>
       </div>

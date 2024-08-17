@@ -41,11 +41,9 @@
   justify-content: center;
   color: rgb(82,179,208);
   letter-spacing: 3px;
-  /* animation: bounce 1500ms infinite; */
   font-size: 2rem;
   font-family: 'Times New Roman', Times, serif;
   font-family: "M PLUS 1 Code", monospace;
-  /* text-transform: uppercase; */
 }
 
 .clientList {
