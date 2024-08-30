@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import imgLogo from "../../assets/Images/CodioSpher-logo.png";
 import Github01Icon from "../../assets/Github01Icon";
 
-function Signin() {
+function SignIn() {
   const [roomId, setRoomId] = useState("");
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
@@ -102,4 +102,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default SignIn;
