@@ -2,23 +2,22 @@ import React, { useState, useEffect } from "react";
 import styles from "../EditorPage/EditorPage.module.css"; 
 import Client from "../../util/Client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import EditorMonaco from "../../util/EditorMonaco";
 import { faStream } from "@fortawesome/free-solid-svg-icons";
 function EditorPage() {
-  const [isAsideVisible, setIsAsideVisible] = useState(false); // State to toggle the aside
-  const location = useLocation();
+  const [isAsideVisible, setIsAsideVisible] = useState(false); 
   const roomId = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const username = location.state;
-    if (!username) {
+    const roomId= localStorage.getItem('RoomId');
+    if (!roomId) {
       navigate('/');
       return;
     }
-  }, [location, navigate]);
+  }, [navigate]);
 
   async function handleCopyClick() {
     await navigator.clipboard.writeText(roomId.id);
@@ -26,6 +25,7 @@ function EditorPage() {
   }
 
   function handleLeaveClick() {
+    localStorage.removeItem("RoomId");
     navigate('/');
   }
 
