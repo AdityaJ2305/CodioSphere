@@ -33,7 +33,6 @@
   margin: 2vh 60vh 5vh 0vh;
   font-size: 30px;
   cursor: pointer;
-  animation: rotate 1s infinite;
 }
 
 .roomMember {

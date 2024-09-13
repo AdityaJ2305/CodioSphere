@@ -4,9 +4,6 @@ import { codeSnippets } from '../assets/code_snippets';
 import { quantum } from 'ldrs'
 
 
-
-// Default values shown
-
 const languageOptions = [
   { value: 'javascript', label: 'JavaScript' },
   { value: 'c', label: 'C' },
@@ -22,6 +19,7 @@ const containerStyle = {
 };
 
 function EditorMonaco() {
+  // loader
   quantum.register()
   const [language, setLanguage] = useState('javascript');
   const [code, setCode] = useState(codeSnippets[language]);
@@ -58,7 +56,7 @@ function EditorMonaco() {
               speed="1.75" 
               color="white" 
             ></l-quantum>}
-            onChange={(newValue) => console.log(newValue)}
+            onChange={(newValue) => setCode(newValue)}
             options={{
               fontSize: 20,
               padding: { top: 0, left: 10, bottom: 20, right: 30 },
