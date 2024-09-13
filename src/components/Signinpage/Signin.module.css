@@ -52,7 +52,6 @@
   .joinBtn:hover {
     background-color: #4895ef;
     color:#4361EE;
-    font-size: larger;
     letter-spacing: 1px;
     font-weight: bolder;
     box-shadow: 0 10px 30px rgba(200, 83, 230, 0.5);
