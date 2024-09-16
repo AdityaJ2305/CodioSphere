@@ -8,19 +8,19 @@ import EditorMonaco from "../../util/EditorMonaco";
 import { faStream } from "@fortawesome/free-solid-svg-icons";
 function EditorPage() {
   const [isAsideVisible, setIsAsideVisible] = useState(false); 
-  const roomId = useParams();
+  const roomId = useParams().id;
   const navigate = useNavigate();
 
   useEffect(() => {
-    const roomId= localStorage.getItem('RoomId');
-    if (!roomId) {
+    const roomIdFromLocalStorage= localStorage.getItem('RoomId');
+    if (roomIdFromLocalStorage !== roomId) {
       navigate('/');
       return;
     }
-  }, [navigate]);
+  }, [navigate,roomId]);
 
   async function handleCopyClick() {
-    await navigator.clipboard.writeText(roomId.id);
+    await navigator.clipboard.writeText(roomId);
     toast.success("Room ID Copied");
   }
 
