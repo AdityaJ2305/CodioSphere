@@ -13,7 +13,7 @@ io.on('connection', (socket) => {
     console.log('socket connected ', socket.id);
 });
 
-const PORT = process.env.PORT || 5009;
+const PORT = process.env.PORT || 5010;
 
 server.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
