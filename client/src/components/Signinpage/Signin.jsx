@@ -86,7 +86,7 @@ function SignIn() {
           Create a<span onClick={createNewRoom}>New Room</span>
         </p>
       </div>
-      <footer>
+      <div className={styles.footer}>
         <h4>
           {" "}
           Built by Aditya Jindal{" "}
@@ -98,7 +98,7 @@ function SignIn() {
             <Github01Icon />
           </a>
         </h4>
-      </footer>
+      </div>
     </div>
   );
 }
