@@ -9,7 +9,6 @@ function App() {
     <>
       <div>
         <Toaster
-          position="top-right"
           toastOptions={{
             success: {
               theme: {
