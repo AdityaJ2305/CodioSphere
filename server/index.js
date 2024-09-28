@@ -22,8 +22,7 @@ const userMap = {};
 // Socket.io connection handler
 io.on('connection', (socket) => {
     console.log(`a user with socket id ${socket.id}`);
-
-    // Handle events, e.g. joining a room
+    
     socket.on('join', ({roomId}) => {
         userMap[socket.id] = "tinka";
         socket.join(roomId);
