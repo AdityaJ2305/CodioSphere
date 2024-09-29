@@ -19,7 +19,6 @@ const getAllClient = (roomid)=>{
     })
 }
 const userMap = {};
-// Socket.io connection handler
 io.on('connection', (socket) => {
     console.log(`a user with socket id ${socket.id}`);
     
