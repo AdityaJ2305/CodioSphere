@@ -82,11 +82,9 @@
   
   .createNewRoom span {
     margin-left: 10px;
-    font-size: 2rem;
     color:#4361EE;
     cursor: pointer;
-    letter-spacing: 1px;
-    font-weight: bold;
+    text-decoration: underline;
   }
   
   .labePlusInput {
